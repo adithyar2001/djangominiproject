@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .f1{
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+        }
+        .f1 input{
+            padding: 5px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            width: fit-content;
+            margin: auto;
+        }
+        .b1{
+            display: flex;
+            justify-content: center;
+        }
+        .b1 button{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+        }
+        label{
+            font-weight: bold;
+        }
+        .e1 p{
+            text-align: center;
+            color: red;
+            font-size: 12px;
+        }
+        .h1 p{
+            text-align: center;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .l1 p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="h1">
+                <p>UPDATE PROFILE</p>
+            </div>
+            <!-- {{form.as_p}} -->
+            <div class="f1">
+                <div>
+                    <label>Firstname:</label>
+                </div>
+                <div>
+                    {{form.firstname}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Lastname:</label>
+                </div>
+                <div>
+                    {{form.lastname}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Email:</label>
+                </div>
+                <div>
+                    {{form.email}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Number:</label>
+                </div>
+                <div>
+                    {{form.number}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Age:</label>
+                </div>
+                <div>
+                    {{form.age}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Gender:</label>
+                </div>
+                <div>
+                    {{form.gender}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Address:</label>
+                </div>
+                <div>
+                    {{form.address}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Image:</label>
+                </div>
+                <div>
+                    {{form.image}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Username:</label>
+                </div>
+                <div>
+                    {{form.username}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Password:</label>
+                </div>
+                <div>
+                    {{form.password}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>Confirm Password:</label>
+                </div>
+                <div>
+                    {{form.confirm_password}}
+                </div>
+            </div>
+            <!-- <div class="e1">
+                <p>{{ermsg}}</p>
+            </div> -->
+            <div class="b1">
+                <button type="submit">Update</button>
+            </div>
+            <div class="l1">
+                <p>Already have an account?<a href="/guestlogin">Login</a></p>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

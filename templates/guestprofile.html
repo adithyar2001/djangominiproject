@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        padding: 0px;
+        margin: 0px;
+        font-family: monospace;
+       }
+        li{
+            display: inline;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+
+        }
+        .navbar{
+            background: black;
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hotellogo{
+            height: 20px;
+        }
+        .logoclass{
+            display: flex;
+            gap:5px;
+            align-items: center;
+        }
+        .logoclass div p{
+            font-size: 20px;
+            color: white;
+            font-weight: bolder;
+        }
+        .p1{
+            width: 600px;
+            margin: auto;
+            border: 2px solid black;
+            align-items: center;
+            border-radius: 10px;
+            margin-top: 100px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .p12{
+            background: black;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display:flex;
+            padding: 20px;
+            padding-left: 30px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .p121{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            
+        }
+        .img1{
+            background-image: url('{{profile.image.url}}');
+            height: 100px;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            background-position:center top ;
+            border: 1px double white;
+        }
+        .u1 p{
+            color: white;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        .p2{
+            padding: 10px;
+        }
+        .b1s{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .b1s a{
+            background: black;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid black;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .b1s a:hover,
+        .b1s a:focus,
+        .b1s a:active{
+            color: black;
+            background: white;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+        .img2{
+            height: 20px;
+        }
+        .p31{
+            display: flex;
+            gap: 5px;
+        }
+        .p3{
+            padding: 20px;
+        }
+        .p3 p{
+            font-size: 15px;
+            font-weight: bolder;
+        }
+        .p3 a{
+            text-decoration: none;
+            background: black;
+            padding: 8px;
+            border-radius: 5px;
+            color: white;
+            border: 1px solid black;
+        }
+        .p3 a:hover,
+        .p3 a:focus,
+        .p3 a:active{
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <div class="logoclass">
+                <div>
+                    <img  class="hotellogo" src="/static/image/hotellogo.png" alt="">
+                </div>
+                <div>
+                    <p>EVAGO</p>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/loginop">Login</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/signupop">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main>
+            <div class="p1">
+                <div class="p12">
+                    <div class="p121">
+                        <div class="img1">
+                        </div>
+                        <div class="u1">
+                            <p>{{username}} (Role:Guest)</p>
+                        </div>
+                    </div>
+                    <div class="p122">
+                        <a href="{% url 'guestupdate' id %}">
+                            <img class="img2" src="/static/image/edit.png" alt="edit profile">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p3">
+                    <div class="p31">
+                        <div>
+                            <p>Select rooms to book:</p>
+                        </div>
+                        <div>
+                            <a href="/bookrooms">BOOK ROOMS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p3">
+                    <div class="p31">
+                        <div>
+                            <p>View Booking Status:</p>
+                        </div>
+                        <div>
+                            <a href="/guestbookingstatus">BOOKING STATUS</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p2">
+                    <div class="b1s"> 
+                        <div>
+                            <a href="{% url 'deleteguest' id %}">Delete Account</a>
+                        </div>
+                        <div>
+                            <a href="/guestlogout/">Logout</a>
+                        </div>
+                    </div>
+                </div>
+               
+
+            </div>
+        </main>
+
+        
+    </div>
+</body>
+</html>

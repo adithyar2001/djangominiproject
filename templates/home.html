@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        padding: 0px;
+        margin: 0px;
+        font-family: monospace;
+       }
+        li{
+            display: inline;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+
+        }
+        .navbar{
+            background: black;
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hotellogo{
+            height: 20px;
+        }
+        .logoclass{
+            display: flex;
+            gap:5px;
+            align-items: center;
+        }
+        .logoclass div p{
+            font-size: 20px;
+            color: white;
+            font-weight: bolder;
+        }
+        .loginsignupbtns{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .loginsignupbtns button{
+            padding: 20px 30px;
+            border-radius: 10px;
+            background: black;
+        }
+        .loginsignupbtns button a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        
+        .outerbackgif{
+            padding: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            color: #fff;
+            z-index: 1;
+        }
+        .aop{
+            padding: 40px;
+            background: black;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+            border: 2px solid black;
+            font-size: 30px;
+        }
+        .aop:hover,
+        .aop:focus,
+        .aop:active{
+            background: white;
+            color: black;
+        }
+        .j1{
+            color: white;
+            font-size: 100px;
+            font-weight: bolder;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .j{
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <div class="logoclass">
+                <div>
+                    <img  class="hotellogo" src="/static/image/hotellogo.png" alt="">
+                </div>
+                <div>
+                    <p>EVAGO</p>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/loginop">Login</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/signupop">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <main>
+            <div class="video-container">
+                <video autoplay muted loop id="video-background">
+                    <source src="/static/image/mp3/AMV_Sunset_-_Now__Beautiful_Anime_Scenery_(720p).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="content">
+                    <div class="j">
+                        <p class="j1">JOIN US</p>
+                        <div class="loginsignupbtns">
+                            
+                            <div>
+                                    <a class="aop" href="/loginop">LOGIN</a>
+                            </div>
+                            <div>
+                                    <a class="aop" href="/signupop">SIGNUP</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+            
+            
+        </main>
+    </div>
+</body>
+</html>

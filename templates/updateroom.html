@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .f1{
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+        }
+        .f1 input{
+            padding: 5px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            width: fit-content;
+            margin: auto;
+        }
+        .b1{
+            display: flex;
+            justify-content: center;
+        }
+        .b1 button{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+        }
+        label{
+            font-weight: bold;
+        }
+        .e1 p{
+            text-align: center;
+            color: red;
+            font-size: 12px;
+        }
+        .h1 p{
+            text-align: center;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .l1 p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="h1">
+                <p>UPDATE ROOMS</p>
+            </div>
+            <!-- {{form.as_p}} -->
+            <div class="f1">
+                <div>
+                    <label>ROOM NUMBER:</label>
+                </div>
+                <div>
+                    {{form.room_number}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>ROOM TYPE:</label>
+                </div>
+                <div>
+                    {{form.room_type}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>ROOM PRICE:</label>
+                </div>
+                <div>
+                    {{form.room_price}}
+                </div>
+            </div>
+
+            <div class="f1">
+                <div>
+                    <label>ROOM AVAILABILITY:</label>
+                </div>
+                <div>
+                    {{form.availability}}
+                </div>
+            </div>
+            
+            <div class="b1">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

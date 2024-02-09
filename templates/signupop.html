@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        padding: 0px;
+        margin: 0px;
+        font-family: monospace;
+       }
+        li{
+            display: inline;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+
+        }
+        .navbar{
+            background: black;
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hotellogo{
+            height: 20px;
+        }
+        .logoclass{
+            display: flex;
+            gap:5px;
+            align-items: center;
+        }
+        .logoclass div p{
+            font-size: 20px;
+            color: white;
+            font-weight: bolder;
+        }
+        .btns{
+            padding: 30px;
+            padding-top: 50px;
+            justify-content: center;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .btns a:active,
+        .btns a:hover,
+        .btns a:focus{
+           background-color: white;
+           color: black;
+           border: 2px solid black;
+        }
+        
+        .btns a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+            font-size: 30px;
+            padding: 40px 50px;
+            background: black;
+            border-radius: 20px;
+            border: 2px solid black;
+
+        }
+        
+        .loginins{
+            padding-top: 20px;
+        }
+        .loginins h1,.loginins p{
+            text-align: center;
+        }
+        .login-section{
+            margin-top: 100px;
+        }
+        body{
+            background-image: url('https://w0.peakpx.com/wallpaper/506/235/HD-wallpaper-white-hexagon-geometric-shapes-white-aesthetic-thumbnail.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <div class="logoclass">
+                <div>
+                    <img  class="hotellogo" src="/static/image/hotellogo.png" alt="">
+                </div>
+                <div>
+                    <p>EVAGO</p>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/loginop">Login</a>
+                    </li>
+                    <li>
+                        <a href="">About Us</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/signupop">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <main>
+            <div class="login-section">
+                <div class="loginins">
+                    <h1>SELECT USER</h1>
+                    <p>Please register to your corresponding roles</p>
+                </div>
+                <div class="btns">
+                    <div>
+                            <a href="/guestsignup">GUEST</a>
+                    </div>
+                    <div>
+                            <a href="/staffsignup">STAFF</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

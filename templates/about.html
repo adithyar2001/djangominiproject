@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        padding: 0px;
+        margin: 0px;
+        font-family: monospace;
+       }
+        li{
+            display: inline;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+
+        }
+        .navbar{
+            background: black;
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hotellogo{
+            height: 20px;
+        }
+        .logoclass{
+            display: flex;
+            gap:5px;
+            align-items: center;
+        }
+        .logoclass div p{
+            font-size: 20px;
+            color: white;
+            font-weight: bolder;
+        }       
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            color: #fff;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding-bottom: 200px;
+        }
+        .a1{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .a1 img{
+            height: 200px;
+            
+        }
+        .a1 p{
+            font-size: 50px;
+            font-weight: bolder;
+        }
+        .a2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .a2 p{
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .a3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .a3 p{
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .a4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+        .a4 p{
+            text-align: center;
+            font-size: 20px;
+        }
+        .content h1{
+            font-size: 50px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <div class="logoclass">
+                <div>
+                    <img  class="hotellogo" src="/static/image/hotellogo.png" alt="">
+                </div>
+                <div>
+                    <p>EVAGO</p>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/loginop">Login</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/signupop">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="video-container">
+        <video autoplay muted loop id="video-background">
+            <source src="/static/image/mp3/back.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+
+            <div class="a1">
+                <div>
+                    <img src="/static/image/hotellogo.png" alt="">
+                </div>
+                <div>
+                    <p>EVAGO</p>
+                </div>
+            </div>
+
+            <div class="a2">
+                <div>
+                    <h1>ABOUT US</h1>
+                </div>
+                <div>
+                    <p>Welcome to EVAGO, where luxury meets comfort and exceptional service is our top priority. Nestled in the heart of Kochi, our hotel offers a unique blend of modern amenities and traditional hospitality to ensure an unforgettable stay for every guest.</p>
+                </div>
+            </div>
+
+            <div class="a3">
+                <div>
+                    <h1>OUR STORY</h1>
+                </div>
+                <div>
+                    <p>Established in 2024, EVAGO has been a cornerstone of hospitality in Kochi for a year. From our humble beginnings as a family-owned inn to our current status as a renowned luxury hotel, we have remained committed to providing unparalleled experiences to our guests.</p>
+                </div>
+            </div>
+
+            <div class="a4">
+                <div>
+                    <h1>MISSION AND VALUES</h1>
+                </div>
+                <div>
+                    <p>At EVAGO, our mission is simple: to exceed the expectations of every guest by delivering personalized service, exceptional accommodations, and memorable experiences. Our core values of integrity, excellence, and innovation guide everything we do, ensuring that each guest feels valued and appreciated throughout their stay.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

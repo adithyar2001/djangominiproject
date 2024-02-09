@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Room</title>
+    <style>
+        *{
+            font-family: monospace;
+            font-size: 20px;
+        }
+        form{
+            width: fit-content;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        form input{
+            padding: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        form select{
+            padding: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        form label{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .b1{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            align-items: center;
+        }
+        .b1 a{
+            background: black;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        .b1 button{
+            background: black;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        .b1 a:hover,
+        .b1 a:focus,
+        .b1 a:active{
+            background: white;
+            color: black;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+        .b1 button:hover,
+        .b1 button:focus,
+        .b1 button:active{
+            background: white;
+            color: black;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+        h1{
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="post">
+        <div>
+            <h1>Book Room</h1>
+        </div>
+        {% csrf_token %}
+        <div>
+            <label for="guest_id">Select Guest:</label>
+            <select name="guest_id" id="guest_id">
+                
+            {% for guest in guests %}
+                <option value="{{ guest.id }}">{{ guest.firstname }} {{ guest.lastname }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        
+        <div>
+            <label for="room_id">Select Room:</label>
+        <select name="room_id" id="room_id">
+            {% for room in rooms %}
+                <option value="{{ room.id }}">{{ room.room_number }}</option>
+            {% endfor %}
+        </select>
+        </div>
+
+        <div>
+            <label for="check_in_date">Check-in Date:</label>
+        <input type="date" name="check_in_date" id="check_in_date">
+        </div>
+
+        <div>
+            <label for="check_out_date">Check-out Date:</label>
+        <input type="date" name="check_out_date" id="check_out_date">
+        </div>
+
+        <div class="b1">
+            <div>
+                <a href="/bookrooms">Back</a>
+            </div>
+            <div>
+                <button type="submit">Book Now</button>
+            </div>
+
+        </div>
+        
+    </form>
+</body>
+</html>

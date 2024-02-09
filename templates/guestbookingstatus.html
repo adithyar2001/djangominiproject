@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .a{
+            color: green;
+            font-weight: bolder;
+        }
+        .p{
+            color: red;
+            font-weight: bolder;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+        th,td{
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: rgba(111, 111, 111, 0.51);
+            
+        }
+        .av{
+            color: green;
+            font-weight: bolder;
+        }
+        .uv{
+            color: red;
+            font-weight: bolder;
+        }
+        th{
+            font-size: 30px;
+            color: white;
+        }
+        td{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        table tr:first-child{
+            background:black;
+        }
+        form{
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        .book{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            background: black;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        .book:hover,
+        .book:focus,
+        .book:active{
+            background: white;
+            color: black;
+        }
+        .book{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            background: black;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        .book:hover,
+        .book:focus,
+        .book:active{
+            background: white;
+            color: black;
+        }
+        .ba1{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <div>
+                <h1>BOOKINGS</h1>
+            </div>
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <th>GUEST</th>
+                    <th>ROOM</th>
+                    <th>CHECK IN DATE</th>
+                    <th>CHECK OUT DATE</th>
+                    <th>STATUS</th>
+                </tr>
+                {% for i in br%}
+                <tr>
+                    <td>{{i.guest}}</td>
+                    <td>{{i.room}}</td>
+                    <td>{{i.checkindate}}</td>
+                    <td>{{i.checkoutdate}}</td>
+                    {% if i.approval %}
+                        <td class="a">Approved</td>
+                    {% else %}
+                        <td class="p">Pending</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+        <div class="ba1">
+            <a href="/guestprofile" class="book">BACK</a>
+        </div>
+    </div>
+</body>
+</html>

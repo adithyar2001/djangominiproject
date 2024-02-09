@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        body{
+            background-image: url('https://w0.peakpx.com/wallpaper/506/235/HD-wallpaper-white-hexagon-geometric-shapes-white-aesthetic-thumbnail.jpg');
+        }
+        form{
+            margin: auto;
+            width: fit-content;
+            padding: 30px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 50px;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .f1{
+            display: flex;
+            gap: 5px;
+            align-items: baseline;
+        }
+        .f1 input{
+            padding: 5px;
+            
+        }
+        .b1{
+            display: flex;
+            justify-content: center;
+        }
+        .b1 button{
+            padding: 5px;
+            border-radius: 5px;
+            background: black;
+            color: white;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/staffloginfunc/" method="POST">
+            {%csrf_token%}
+            <div>
+                <h1>STAFF LOGIN</h1>
+            </div>
+            <div class="f1">
+                <div>
+                    <label>Username:</label>
+                </div>
+                <div>
+                    <input type="text" name="username">
+                </div>
+            </div>
+            <div class="f1">
+                <div>
+                    <label>Password:</label>
+                </div>
+                <div>
+                    <input type="text" name="password">
+                </div>
+            </div>
+            <div>
+                <p>{{cb}}</p>
+            </div>
+            <div class="b1">
+                <button type="submit">Log in</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

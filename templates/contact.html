@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: black;
+        }
+        .feed p{
+            font-family: cursive;
+            font-size: 50px;
+            color: white;
+
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            background: black;
+            color: white;
+            border: 1px solid white;
+        }
+        .fe1{
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+        }
+        .fe1 label{
+            font-size: 20px;
+            font-weight: bolder;
+            color: white;
+        }
+        input{
+            padding: 5px;
+            width: 400px;
+        }
+       *{
+        padding: 0px;
+        margin: 0px;
+        font-family: monospace;
+       }
+        li{
+            display: inline;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+
+        }
+        .navbar{
+            background: black;
+            
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hotellogo{
+            height: 20px;
+        }
+        .logoclass{
+            display: flex;
+            gap:5px;
+            align-items: center;
+        }
+        .logoclass div p{
+            font-size: 20px;
+            color: white;
+            font-weight: bolder;
+        }       
+        .contact{
+            background-image: url('https://i.pinimg.com/originals/c0/29/77/c0297792ab96bd4e641d5aa971062c7e.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 600px;
+        }
+        .c1{
+            padding-top: 100px;
+        }
+        .c1 p{
+            text-align: center;
+        }
+        .c1 p:nth-child(1){
+            font-family: cursive;
+            font-size: 100px;
+            font-weight: bolder;
+            color: white;
+        }
+        .c1 p:nth-child(2){
+            font-family: cursive;
+            font-size: 80px;
+            font-weight: bolder;
+            color: white;
+        }
+        .cop{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 50px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        .copimg{
+            height: 60px;
+        }
+        .cop1{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .cop1 p{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bolder;
+        }
+        .cop1 div:nth-child(1){
+            display: flex;
+            justify-content: center;
+        }
+        .cop .cop1:nth-child(odd){
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <div class="logoclass">
+                <div>
+                    <img  class="hotellogo" src="/static/image/hotellogo.png" alt="">
+                </div>
+                <div>
+                    <p>EVAGO</p>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/loginop">Login</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/signupop">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="contact">
+            <div class="c1">
+                <p>CONTACT</p>
+                <p>24x7</p>
+            </div>
+        </div>
+
+        <div class="cop">
+            <div class="cop1">
+                <div>
+                    <img class="copimg" src="/static/image/email.png" alt="">
+                </div>
+                <div>
+                    <p>evagohomes@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="cop1">
+                <div>
+                    <img class="copimg" src="/static/image/location.png" alt="">
+                </div>
+                <div>
+                    <p>Evago Homes, M.G Road<br>
+                        Kochi Ernakulam</p>
+                </div>
+            </div>
+
+            <div class="cop1">
+                <div>
+                    <img class="copimg" src="/static/image/phone.png" alt="">
+                </div>
+                <div>
+                    <p>+919900456714</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div>
+            <form action="" method="POST" >
+                <div class="feed">
+                    <p>FEEDBACK</p>
+                </div>
+                {%csrf_token%}
+                <div class="fe1">
+                    <div>
+                        <label for="">Email:</label>
+                    </div>
+                    <div>
+                        {{form.email}}
+                    </div>
+                </div>
+                <div class="fe1">
+                    <div>
+                        <label for="">Feedback:</label>
+                    </div>
+                    <div>
+                        {{form.topic}}
+                    </div>
+                </div>
+                <div>
+                    <button type="submit">send</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
